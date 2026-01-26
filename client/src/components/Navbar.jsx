@@ -91,6 +91,7 @@ const logoutCustomer = () => {
       }}
     >
       <div
+       className="nav-links"
         className="container"
         style={{
           height: 68,

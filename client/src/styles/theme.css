@@ -178,3 +178,143 @@ input, textarea, select{
 input:focus, textarea:focus, select:focus{
   box-shadow: 0 0 0 4px rgba(255,45,85,.08);
 }
+/* ✅ Mobile Responsive Pack */
+:root{
+  --container: 1180px;
+}
+
+.container{
+  width: min(var(--container), 100%);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ✅ genel */
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea{
+  max-width: 100%;
+}
+
+/* ✅ Gridler mobilde 1 kolona düşsün */
+.products-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ✅ Tablet */
+@media (max-width: 992px){
+  .products-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ✅ Mobil */
+@media (max-width: 768px){
+  .products-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .hero{
+    padding: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .hero h1{
+    font-size: 30px !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero p{
+    font-size: 14px !important;
+  }
+
+  .btn-row{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-row .btn{
+    width: 100%;
+  }
+}
+
+/* ✅ Çok küçük ekran */
+@media (max-width: 420px){
+  .products-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Navbar mobil */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Mobilde menü öğeleri taşmasın */
+@media (max-width: 768px){
+  .nav-links{
+    display: none; /* istersen hamburger yaparız */
+  }
+
+  .nav-actions{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* ✅ Kartlar (ürün kutuları) */
+.product-card{
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.product-card img{
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.product-card .info{
+  padding: 12px;
+}
+
+.product-card .title{
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.product-card .price{
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ✅ Formlar mobil */
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 768px){
+  .form-grid{
+    grid-template-columns: 1fr;
+  }
+}
